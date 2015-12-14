@@ -1,0 +1,49 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.matrix {
+  display: flex;
+  width: 360px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.matrix__item {
+  display: inline-block;
+  background-color: #fcf4d9;
+  border-radius: 50%;
+  border: 2px solid #7B8D8E;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  transition: all 1s ease;
+  opacity: 0.2;
+}
+
+.matrix__item--highlighted {
+  background-color: #ffb85f;
+  opacity: 1;
+}
+
+.matrix__item--last {
+  animation: filling_finish 2s 0.2s ease forwards;
+}
+
+@keyframes filling_finish {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+    transform: rotateY(180deg);
+    background-color: #8ed2c9;
+  }
+}
